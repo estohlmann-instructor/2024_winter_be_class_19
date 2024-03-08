@@ -1,0 +1,3 @@
+api:
+  beer:
+    host: http://localhost:8080

@@ -1,0 +1,6 @@
+api:
+  beer:
+    host: https://api.punkapi.com
+    beerByIdPath: /v2/beers/{id}
+    api-host: localhost
+    api-key: testing123

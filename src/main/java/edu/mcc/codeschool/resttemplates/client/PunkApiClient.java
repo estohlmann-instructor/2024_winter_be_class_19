@@ -14,6 +14,7 @@ public class PunkApiClient {
 
 
     public Beer getBeerById(Integer id){
+
         Beer[] ret =  restTemplate.getForObject("https://api.punkapi.com/v2/beers/{id}", Beer[].class, id);
         return ret != null && ret.length > 0 ? ret[0] : null;
     }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/beers")
 public class BeerController {
     private final BeerService beerService;
 
@@ -19,8 +18,13 @@ public class BeerController {
         this.beerService = beerService;
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/api/v1/beers/{id}")
     public ResponseEntity<BeerDTO> getBeer(@PathVariable Integer id){
         return beerService.getBeer(id);
+    }
+
+    @GetMapping("/api/v2/beers/{id}")
+    public ResponseEntity<BeerDTO> getBeerV2(@PathVariable Integer id){
+        return beerService.getBeerReactive(id);
     }
 }
