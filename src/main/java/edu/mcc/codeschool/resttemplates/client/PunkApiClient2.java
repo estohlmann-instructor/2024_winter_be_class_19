@@ -34,6 +34,7 @@ public class PunkApiClient2 {
         System.out.println(beerApiConfig.getHost() + beerApiConfig.getBeerByIdPath());
         return webClient.get().uri(uriBuilder -> uriBuilder
                 .path(beerApiConfig.getBeerByIdPath())
+                .queryParam("q", "test")
                 .build(id))
                 .retrieve()
                 .bodyToMono(Beer[].class);
